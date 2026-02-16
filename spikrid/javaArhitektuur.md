@@ -14,36 +14,42 @@ User Interface → Application → Domain → Infrastructure → Database
 ---
 
 ## 1. Presentation layer (UI)
+**KIRJUTAME VIIMASENA**
 - CLI, GUI, REST Controller, veebileht, I/O  
 - Vastutab kasutajaga suhtlemise eest: kogub sisendi, kuvab tulemuse  
-- Ei tee äriloogikat ega salvestust  
+- EI tee äriloogikat ega salvestust  
 - Sõltub **Application layerist**
 
 ---
 
 ## 2. Application layer
+**KIRJUTAME TEISENA**
 - Use cases / Services  
 - Orkestreerib domain-objektide tööd ja protsesse  
-- Loob domain-objekte, kutsub domain kalkulatsioone, salvestab vajadusel tulemuse  
+- Loob domain-objekte, kutsub domain kalkulatsioone, salvestab tulemuse Infrastructure kaudu  
 - Sõltub **Domain layerist**  
-- Ei sisalda ärireegleid ega valemeid
+- EI sisalda ärireegleid ega valemeid
 
 ---
 
 ## 3. Domain layer
+**KIRJUTAME ESIMESENA**
 - Entities, Value Objects, Business Rules, Logic  
 - Sisaldab ärireegleid, valemeid, valideerimist, domeeni mõisteid  
-- Ei sõltu UI-st, Applicationist ega Infrastructure’ist  
+- EI sõltu UI-st, Applicationist ega Infrastructure’ist  
+- EI tee salvestamist ega I/O-d
 
 ---
 
 ## 4. Infrastructure layer
+**KIRJUTAME KOLMANDANA**
 - Persistence, failid, DB, võrguteenused, API  
 - Rakendab Domaini liideseid (nt Repository interface) ja salvestab andmeid  
 - Sõltub **Domain layerist**, mitte vastupidi  
+- Database’iga suhtleb ainult Infrastructure
 
 ---
 
 ## 5. Database
 - Füüsiline andmete hoidla (SQL, NoSQL, failid)  
-- Infrastructure’i osa  
+- Infrastructure’i osa
