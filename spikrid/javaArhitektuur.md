@@ -1,6 +1,6 @@
-# PROGRAMMI KIHILINE ARHITEKTUUR 
+# PROGRAMMI KIHID 
 ## Layered Architecture
-Eristatud vastutused; sõltuvused liiguvad allapoole.
+Vastutused olgu eristatud & sõltuvused toetuvad teineteisele.
 
 User Interface → Application → Domain → Infrastructure → Database
 
@@ -15,7 +15,7 @@ User Interface → Application → Domain → Infrastructure → Database
 ---
 
 ## 1. Presentation layer (UI)
-**KIRJUTAME VIIMASENA**
+**KIRJUTAME VIIMASENA, SEST S6LTUB K6IGIST TEISTEST**
 - CLI, GUI, REST Controller, veebileht, I/O  
 - Vastutab kasutajaga suhtlemise eest: kogub sisendi, kuvab tulemuse  
 - EI tee äriloogikat ega salvestust  
@@ -24,7 +24,7 @@ User Interface → Application → Domain → Infrastructure → Database
 ---
 
 ## 2. Application layer
-**KIRJUTAME TEISENA**
+**KIRJUTAME TEISENA, SEST VAJAB ALUMISI, ET VAHENDADA K6IKE SEALT ESIMESELE**
 - Use cases / Services  
 - Orkestreerib domain-objektide tööd ja protsesse  
 - Loob domain-objekte, kutsub domain kalkulatsioone, salvestab tulemuse Infrastructure kaudu  
@@ -34,7 +34,7 @@ User Interface → Application → Domain → Infrastructure → Database
 ---
 
 ## 3. Domain layer
-**KIRJUTAME ESIMESENA**
+**KIRJUTAME ESIMESENA. PROGRAMMI SYDA**
 - Entities, Value Objects, Business Rules, Logic  
 - Sisaldab ärireegleid, valemeid, valideerimist, domeeni mõisteid  
 - EI sõltu UI-st, Applicationist ega Infrastructure’ist  
@@ -43,7 +43,7 @@ User Interface → Application → Domain → Infrastructure → Database
 ---
 
 ## 4. Infrastructure layer
-**KIRJUTAME KOLMANDANA**
+**KIRJUTAME KOLMANDANA, VAHENDAB VARASALVE**
 - Persistence, failid, DB, võrguteenused, API  
 - Rakendab Domaini liideseid (nt Repository interface) ja salvestab andmeid  
 - Sõltub **Domain layerist**, mitte vastupidi  
@@ -57,7 +57,7 @@ User Interface → Application → Domain → Infrastructure → Database
 
 ---
 # KIHILISE ARHITEKTUURI KAUSTASTRUKTUURID
-Need kaustade ja kihtide standardid on laialdaselt kasutatud tarkvaraarenduses, sest need aitavad hoida koodi loogiliselt organiseerituna, eristada vastutusi ja teha projekti hooldamise ning laiendamise lihtsamaks.
+Need kaustade ja kihtide standardid on laialdaselt kasutatud tarkvaraarenduses, sest need aitavad hoida koodi loogiliselt organiseerituna, eristada vastutusi ja teha projekti hooldamise ning laiendamise lihtsamaks. java on tihti allikkeel, mist6ttu algavad javaprogrammid src kausta loomisega. 
 
 ## CLI PROJEKT
     ProjectName/
